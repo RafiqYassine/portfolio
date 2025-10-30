@@ -1,9 +1,12 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="section">
-      <h2 className="section-title">About Me</h2>
+      <h2 className="section-title">{t('about.title')}</h2>
       <div className="about-content">
         <div className="about-image">
           <div className="profile-image" style={{ 
@@ -16,26 +19,16 @@ const About = () => {
             fontSize: '1.2rem',
             borderRadius: '20px'
           }}>
-            Your Photo Here
+            {t('nav.about')}
           </div>
         </div>
         <div className="about-text">
-          <h3>Curious Developer & Problem Solver</h3>
-          <p>
-            Hello! I'm a passionate junior web developer with a strong foundation in modern 
-            web technologies. I love turning ideas into reality through code and creating 
-            amazing user experiences.
-          </p>
-          <p>
-            When I'm not coding, you can find me learning new technologies, contributing to 
-            open-source projects, or exploring the latest trends in web development.
-          </p>
-          <p>
-            I'm currently looking for opportunities to work on exciting projects and 
-            collaborate with amazing people.
-          </p>
+          <h3>{t('about.heading')}</h3>
+          <p>{t('about.text1')}</p>
+          <p>{t('about.text2')}</p>
+          <p>{t('about.text3')}</p>
           <a href="#contact" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-            Let's Work Together
+            {t('about.workTogether')}
           </a>
         </div>
       </div>

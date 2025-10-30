@@ -1,23 +1,25 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <h1>Hi, I'm Your Name</h1>
-        <div className="hero-subtitle">Junior Web Developer</div>
+        <h1>{t('hero.title')}</h1>
+        <div className="hero-subtitle">{t('hero.subtitle')}</div>
         <p className="hero-description">
-          I create beautiful and functional websites using modern technologies. 
-          Passionate about coding and always learning new things.
+          {t('hero.description')}
         </p>
         <div className="cta-buttons">
           <a href="#projects" className="btn btn-primary">
             <i className="fas fa-code"></i>
-            View My Work
+            {t('hero.viewWork')}
           </a>
           <a href="#contact" className="btn btn-secondary">
             <i className="fas fa-paper-plane"></i>
-            Get In Touch
+            {t('hero.getInTouch')}
           </a>
         </div>
       </div>

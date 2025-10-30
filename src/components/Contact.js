@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t, language } = useLanguage(); // FIXED: Added 'language' here
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,15 +18,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
+    alert(language === 'en' ? 'Thank you for your message! I will get back to you soon.' : 'Merci pour votre message ! Je vous répondrai bientôt.');
     setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <section id="contact" className="section">
-      <h2 className="section-title">Get In Touch</h2>
+      <h2 className="section-title">{t('contact.title')}</h2>
       <div className="contact-content">
         <div className="contact-info">
           <div className="contact-item">
@@ -32,7 +33,7 @@ const Contact = () => {
               <i className="fas fa-envelope"></i>
             </div>
             <div>
-              <h3>Email</h3>
+              <h3>{t('contact.email')}</h3>
               <p>your.email@example.com</p>
             </div>
           </div>
@@ -42,7 +43,7 @@ const Contact = () => {
               <i className="fas fa-phone"></i>
             </div>
             <div>
-              <h3>Phone</h3>
+              <h3>{t('contact.phone')}</h3>
               <p>+1 (555) 123-4567</p>
             </div>
           </div>
@@ -52,7 +53,7 @@ const Contact = () => {
               <i className="fas fa-map-marker-alt"></i>
             </div>
             <div>
-              <h3>Location</h3>
+              <h3>{t('contact.location')}</h3>
               <p>Your City, Country</p>
             </div>
           </div>
@@ -60,7 +61,7 @@ const Contact = () => {
         
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Your Name</label>
+            <label htmlFor="name">{t('contact.name')}</label>
             <input
               type="text"
               id="name"
@@ -72,7 +73,7 @@ const Contact = () => {
           </div>
           
           <div className="form-group">
-            <label htmlFor="email">Your Email</label>
+            <label htmlFor="email">{t('contact.emailPlaceholder')}</label>
             <input
               type="email"
               id="email"
@@ -84,7 +85,7 @@ const Contact = () => {
           </div>
           
           <div className="form-group">
-            <label htmlFor="message">Your Message</label>
+            <label htmlFor="message">{t('contact.message')}</label>
             <textarea
               id="message"
               name="message"
@@ -97,7 +98,7 @@ const Contact = () => {
           
           <button type="submit" className="btn btn-primary">
             <i className="fas fa-paper-plane"></i>
-            Send Message
+            {t('contact.sendMessage')}
           </button>
         </form>
       </div>

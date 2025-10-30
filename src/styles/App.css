@@ -478,6 +478,107 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+/* Language Switch Button */
+.language-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.language-btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* CV Section */
+.cv-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cv-actions {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.download-btn {
+  font-size: 1.1rem;
+  padding: 12px 30px;
+}
+
+.cv-preview {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cv-section {
+  margin-bottom: 2.5rem;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-section h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+.cv-item {
+  margin-bottom: 2rem;
+}
+
+.cv-item:last-child {
+  margin-bottom: 0;
+}
+
+.cv-item h4 {
+  color: var(--darker);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.cv-meta {
+  color: var(--gray);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.cv-item p {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.languages-list p {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+/* Responsive Design for CV */
+@media (max-width: 768px) {
+  .cv-preview {
+    padding: 1.5rem;
+  }
+  
+  .cv-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cv-item h4 {
+    font-size: 1.1rem;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
