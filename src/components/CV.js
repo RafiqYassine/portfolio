@@ -6,8 +6,8 @@ const CV = () => {
 
   // CV download links - you'll need to create these PDF files
   const cvLinks = {
-    en: '/cv/cv-yassine-rafiq-en.pdf',
-    fr: '/cv/cv-yassine-rafiq-fr.pdf'
+    en: 'https://rafiqyassine.github.io/portfolio/cv/cv-yassine-rafiq-en.pdf',
+    fr: 'https://rafiqyassine.github.io/portfolio/cv/cv-yassine-rafiq-fr.pdff'
   };
 
   const handleDownload = () => {
