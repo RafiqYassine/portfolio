@@ -6,7 +6,7 @@ const CV = () => {
 
   const cvLinks = {
     fr: 'https://rafiqyassine.github.io/portfolio/cv/Yassine_Rafiq_fr.pdf',
-    en: 'https://rafiqyassine.github.io/portfolio/cv/cv-yassine-rafiq-fr.pdf'
+    // en: 'https://rafiqyassine.github.io/portfolio/cv/cv-yassine-rafiq-fr.pdf'
   };
 
   const handleDownload = () => {
