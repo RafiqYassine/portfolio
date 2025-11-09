@@ -81,15 +81,15 @@
       "english": "English - Intermediate"
     }
   },
-  "contact": {
-    "title": "Get In Touch",
+ "contact": {
+    "title": "Contact Me",
     "email": "Email",
     "phone": "Phone",
-    "location": "Location",
-    "name": "Your Name",
-    "emailPlaceholder": "Your Email",
-    "message": "Your Message",
-    "sendMessage": "Send Message"
+    "linkedin": "LinkedIn",
+    "getInTouch": "Get In Touch",
+    "messageText": "Feel free to reach out to me via email, phone, or LinkedIn. I'm always open to discussing new opportunities and interesting projects.",
+    "sendEmail": "Send Email",
+    "connectLinkedIn": "Connect on LinkedIn"
   },
   "footer": {
     "rights": "All rights reserved",

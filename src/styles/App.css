@@ -373,6 +373,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  align-items: start;
 }
 
 .contact-info {
@@ -384,51 +385,129 @@ html {
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .contact-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  flex-shrink: 0;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-weight: 600;
+.contact-item h3 {
+  margin: 0 0 0.5rem 0;
   color: var(--darker);
+  font-size: 1.1rem;
 }
 
-.form-group input,
-.form-group textarea {
-  padding: 12px;
-  border: 2px solid #e5e7eb;
+.contact-item p {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.contact-message {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.contact-message h3 {
+  margin: 0 0 1rem 0;
+  color: var(--darker);
+  font-size: 1.5rem;
+}
+
+.contact-message p {
+  margin: 0 0 2rem 0;
+  color: var(--dark);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border: none;
   border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .contact-actions {
+    flex-direction: column;
+  }
 }
 
 /* Footer */
@@ -496,9 +575,9 @@ html {
   transform: scale(1.05);
 }
 
-/* CV Section */
+/* CV Section Styles */
 .cv-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -510,33 +589,54 @@ html {
 .download-btn {
   font-size: 1.1rem;
   padding: 12px 30px;
+  margin: 0 0.5rem;
 }
 
 .cv-preview {
   background: white;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
 }
 
 .cv-section {
   margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .cv-section:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .cv-section h3 {
   color: var(--primary);
   margin-bottom: 1.5rem;
   font-size: 1.4rem;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cv-section h3 i {
+  font-size: 1.2rem;
 }
 
 .cv-item {
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.cv-item:hover {
+  background: #f1f5f9;
+  transform: translateX(5px);
 }
 
 .cv-item:last-child {
@@ -547,36 +647,296 @@ html {
   color: var(--darker);
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .cv-meta {
-  color: var(--gray);
-  font-style: italic;
+  color: var(--primary);
+  font-weight: 500;
   margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-meta::before {
+  content: "•";
+  color: var(--secondary);
+  font-weight: bold;
 }
 
 .cv-item p {
   color: var(--dark);
   line-height: 1.6;
+  margin: 0;
+}
+
+.languages-list {
+  display: grid;
+  gap: 0.8rem;
 }
 
 .languages-list p {
-  margin-bottom: 0.5rem;
   color: var(--dark);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0;
 }
 
-/* Responsive Design for CV */
+.languages-list p:last-child {
+  border-bottom: none;
+}
+
+/* CV Download Buttons Container */
+.cv-buttons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Enhanced Project Cards for CV Section */
+.projects-section {
+  margin-bottom: 4rem;
+}
+
+.projects-subtitle {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--darker);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.projects-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Enhanced Project Cards */
+.project-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-placeholder {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.collaboration-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(10px);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  color: var(--darker);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.project-content p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.collaborators {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--dark);
+  border-left: 4px solid var(--secondary);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: var(--primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+
+.project-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for CV Section */
 @media (max-width: 768px) {
   .cv-preview {
     padding: 1.5rem;
+    margin: 0 1rem;
   }
   
   .cv-section h3 {
     font-size: 1.2rem;
   }
   
+  .cv-item {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
   .cv-item h4 {
     font-size: 1.1rem;
+  }
+  
+  .cv-buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .download-btn {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .project-link {
+    justify-content: center;
+  }
+  
+  .collaboration-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .cv-item {
+    padding: 0.8rem;
+  }
+  
+  .cv-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cv-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cv-item {
+    padding: 1rem;
+  }
+  
+  .cv-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .cv-actions {
+    flex-direction: column;
+  }
+  
+  .cv-btn {
+    width: 100%;
   }
 }
 

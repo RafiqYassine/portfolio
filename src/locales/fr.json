@@ -82,14 +82,14 @@
     }
   },
   "contact": {
-    "title": "Me Contacter",
-    "email": "Email",
+    "title": "Contact",
+    "email": "E-mail",
     "phone": "Téléphone",
-    "location": "Localisation",
-    "name": "Votre Nom",
-    "emailPlaceholder": "Votre Email",
-    "message": "Votre Message",
-    "sendMessage": "Envoyer Message"
+    "linkedin": "LinkedIn",
+    "getInTouch": "Restons en Contact",
+    "messageText": "N'hésitez pas à me contacter par e-mail, téléphone ou LinkedIn. Je suis toujours ouvert à discuter de nouvelles opportunités et de projets intéressants.",
+    "sendEmail": "Envoyer un E-mail",
+    "connectLinkedIn": "Se connecter sur LinkedIn"
   },
   "footer": {
     "rights": "Tous droits réservés",
