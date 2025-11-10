@@ -6,22 +6,22 @@ const Skills = () => {
 
   const skillsData = {
     frontend: [
-      { name: 'HTML/CSS', level: 'Advanced' },
-      { name: 'JavaScript', level: 'Intermediate' },
-      { name: 'React', level: 'Intermediate' },
-      { name: 'Responsive Design', level: 'Advanced' }
+      'HTML/CSS',
+      'JavaScript',
+      'React',
+      'Responsive Design'
     ],
     backend: [
-      { name: 'Node.js', level: 'Basic' },
-      { name: 'Express', level: 'Basic' },
-      { name: 'MongoDB', level: 'Basic' },
-      { name: 'REST APIs', level: 'Intermediate' }
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'REST APIs'
     ],
     tools: [
-      { name: 'Git & GitHub', level: 'Intermediate' },
-      { name: 'VS Code', level: 'Advanced' },
-      { name: 'Figma', level: 'Basic' },
-      { name: 'Netlify', level: 'Intermediate' }
+      'Git & GitHub',
+      'VS Code',
+      'Figma',
+      'Netlify'
     ]
   };
 
@@ -34,8 +34,7 @@ const Skills = () => {
           <ul className="skill-list">
             {skillsData.frontend.map((skill, index) => (
               <li key={index}>
-                <span>{skill.name}</span>
-                <span className="skill-level">{skill.level}</span>
+                <span>{skill}</span>
               </li>
             ))}
           </ul>
@@ -46,8 +45,7 @@ const Skills = () => {
           <ul className="skill-list">
             {skillsData.backend.map((skill, index) => (
               <li key={index}>
-                <span>{skill.name}</span>
-                <span className="skill-level">{skill.level}</span>
+                <span>{skill}</span>
               </li>
             ))}
           </ul>
@@ -58,8 +56,7 @@ const Skills = () => {
           <ul className="skill-list">
             {skillsData.tools.map((skill, index) => (
               <li key={index}>
-                <span>{skill.name}</span>
-                <span className="skill-level">{skill.level}</span>
+                <span>{skill}</span>
               </li>
             ))}
           </ul>

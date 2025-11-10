@@ -10,7 +10,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-image">
           <div className="profile-image" style={{ 
-            background: '#6366f1', 
+            background: '#475569', 
             height: '300px',
             display: 'flex',
             alignItems: 'center',
@@ -19,6 +19,7 @@ const About = () => {
             fontSize: '1.2rem',
             borderRadius: '20px'
           }}>
+            <i className="fas fa-user" style={{ fontSize: '3rem', marginRight: '1rem' }}></i>
             {t('nav.about')}
           </div>
         </div>
